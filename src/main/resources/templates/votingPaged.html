@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System with Persistent Countdown Timer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        h1, h2 { font-size: 24px; margin-bottom: 20px; }
+        .vote-container { display: flex; gap: 20px; }
+        .vote-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .vote-button:hover { background-color: #45a049; }
+        .vote-button:disabled { background-color: #888; cursor: not-allowed; }
+        .vote-count { font-size: 18px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<!-- Countdown Timer Display -->
+<h2>Time Left: <span id="countdown">6 Days</span></h2>
+
+<!-- Total Vote Count Display -->
+<h1>Total Votes: <span id="totalVotes" th:text="${voteCount.totalVotes}"></span></h1>
+
+<!-- Vote Buttons for Each Candidate -->
+<div class="vote-container">
+    <!-- Trump Vote Button -->
+    <div>
+        <button class="vote-button" onclick="voteFor('Trump')" id="trumpButton"
+                th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">
+            Vote for Trump
+        </button>
+        <p class="vote-count">Trump Votes: <span id="trumpVotes" th:text="${voteCount.trumpVotes}">0</span></p>
+    </div>
+
+    <!-- Kamala Vote Button -->
+    <div>
+        <button class="vote-button" onclick="voteFor('Kamala')" id="kamalaButton"
+                th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">
+            Vote for Kamala
+        </button>
+        <p class="vote-count"> Kamala Votes: <span id="kamalaVotes" th:text="${voteCount.kamalaVotes}">0</span></p>
+    </div>
+</div>
+
+<!-- JavaScript for Voting Logic and Countdown Timer -->
+<script th:inline="javascript">
+    /* Initialize variables with Thymeleaf expressions */
+   // const endTime = /*[[${#dates.format(voteCount.endTime, 'yyyy-MM-dd''T''HH:mm:ss.SSSZ')}]]*/ "";
+
+    const countdownDuration = 518400; // 6 days in seconds
+
+    // Get end time from localStorage or set it for the first time
+    let endTime = localStorage.getItem("endTime");
+    if (!endTime) {
+        endTime = Date.now() + countdownDuration * 1000; // Set end time
+        localStorage.setItem("endTime", endTime);
+    } else {
+        endTime = parseInt(endTime);
+    }
+
+
+    /* Function to handle voting */
+    function voteFor(candidate) {
+        fetch('/vote/cast?candidate=' + candidate, { method: 'POST' })
+            .then(response => {
+                if (response.ok) {
+                    // Update the vote count without reloading the page
+                    updateVoteCounts(candidate);
+                }
+            });
+    }
+
+    /* Update the displayed vote counts */
+    function updateVoteCounts(candidate) {
+        if (candidate == 'Trump'){
+            var trump = parseInt(document.getElementById("trumpVotes").innerText, 10);
+            trump++;
+            document.getElementById("trumpVotes").innerText = trump;
+            var kamala = parseInt(document.getElementById("kamalaVotes").innerText, 10);
+            var total = trump + kamala;
+            document.getElementById("totalVotes").innerText = total;
+        }
+        if( candidate == 'Kamala'){
+            var kamala = parseInt(document.getElementById("kamalaVotes").innerText, 10);
+            kamala++;
+            document.getElementById("kamalaVotes").innerText = kamala;
+            var trump = parseInt(document.getElementById("trumpVotes").innerText, 10);
+            var total = trump + kamala;
+            document.getElementById("totalVotes").innerText = total;
+        }
+
+
+        // fetch('/vote/vote/counts')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         var trump = document.getElementById("trumpVotes").innerText;
+        //         trump++;
+        //         var kamala = document.getElementById("kamalaVotes").innerText;
+        //         kamala++;
+        //         var total = trump + kamala;
+        //         document.getElementById("totalVotes").innerText = total;
+        //     });
+    }
+
+    /* Countdown Timer */
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const end = new Date(endTime).getTime();
+        const timeLeft = Math.max((end - now) / 1000, 0);
+
+        if (true) {
+            const days = Math.floor(timeLeft / (24 * 3600));
+            const hours = Math.floor((timeLeft % (24 * 3600)) / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = Math.floor(timeLeft % 60);
+
+            document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+            document.getElementById("countdown").innerText = "Voting has ended";
+            document.getElementById("trumpButton").disabled = true;
+            document.getElementById("kamalaButton").disabled = true;
+        }
+    }
+
+    /* Start the countdown and update every second */
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
