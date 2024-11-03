@@ -1,0 +1,32 @@
+FROM eclipse-temurin:17.0.4.1_1-jre AS builder
+WORKDIR /voting
+#copies every thing that has .jar in the target folder in local machine in the inventory directory
+COPY target/*.jar .
+#This is a specific command for the Spring Boot Layered JAR functionality. When used with -Djarmode=layertools, it instructs the application to extract the layers defined in the layered JAR file.
+RUN java -Djarmode=layertools -jar *.jar extract
+#set the working directory to a new folder named inventoryservice
+
+FROM eclipse-temurin:17.0.4.1_1-jre AS runtimee
+WORKDIR /voteapp
+#copying the dependency layered folder to the working directory inventoryservice
+COPY --from=builder voting/dependencies/ .
+#copying the spring-boot-loader layered folder to the working directory inventoryservice
+COPY --from=builder voting/spring-boot-loader/ .
+COPY --from=builder voting/snapshot-dependencies/ .
+COPY --from=builder voting/application/ .
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "org.springframework.boot.loader.JarLauncher"]
+
+#Output of the above operation
+#/
+#├── product/
+#│   ├── *.jar                # JAR file(s) copied to /gateway
+#│   ├── dependencies/        # Extracted layers from the JAR
+#│   ├── spring-boot-loader/
+#│   ├── snapshot-dependencies/
+#│   └── application/
+#└── productservice/                  # New working directory for the final image stage
+#    ├── dependencies/        # Copied from /gateway/dependencies
+#    ├── spring-boot-loader/
+#    ├── snapshot-dependencies/
+#    └── application/
