@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4beb939e-ffc7-4c64-a69e-d23e9846c390" name="Changes" comment="first commmit">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile.layered" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
       <workItem from="1730594252939" duration="10999000" />
       <workItem from="1730627770669" duration="255000" />
       <workItem from="1730639328357" duration="3129000" />
-      <workItem from="1730657254680" duration="7392000" />
+      <workItem from="1730657254680" duration="8990000" />
     </task>
     <task id="LOCAL-00001" summary="first commmit">
       <option name="closed" value="true" />
@@ -90,7 +87,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730639828150</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first commmit">
+      <option name="closed" value="true" />
+      <created>1730676785771</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730676785771</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
