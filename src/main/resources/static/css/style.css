@@ -156,7 +156,8 @@ ol {
 
 .section-header{
     position: relative;
-    margin-bottom: 50px
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .section-title {
     font-size: 44px;
@@ -461,6 +462,11 @@ ol {
 .pt-60{
     padding-top: 60px
 }
+
+.social-space {
+    margin-left: 100px;
+}
+
 @media (max-width: 992px){
     .double-bg{
         background-size: cover !important
@@ -628,7 +634,8 @@ ol {
 .section-heading {
     position: relative;
     z-index: 1;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .section-heading h2 {
@@ -862,7 +869,6 @@ ol {
     background: #638BEE;
     height: 45px;
     border-radius: 25px;
-    border: 1px solid #fff;
     letter-spacing: 1px;
 }
 
@@ -910,7 +916,7 @@ ol {
 }
 
 .about {
-    font-size: 100px;
+    font-size: 60px;
     font-family: "Amatic SC", sans-serif;
     color: #113577;
 }
@@ -1008,6 +1014,7 @@ ol {
     max-height: 3rem;
 }
 }
+
 /* ##### 2.0 Header Area CSS ##### */
 .nav{transition: all .5s ease-in}
 .navbar-brand {
@@ -1021,8 +1028,8 @@ ol {
 .lh-55px{line-height: 55px}
 .navbar-nav .nav-item .nav-link{
     padding: 20px 12px;
-    font-size:20px;
-    font-weight: 700;
+    font-size: 23px;
+    font-weight: 900;
     letter-spacing: 1px;
     color: #636BFF;
     font-family: "Amatic SC", sans-serif;
@@ -1063,9 +1070,9 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 /* mobile view */
 @media (max-width:500px)
 {
-    .navbar{ background: #AC7E07;}
+    .navbar{ background: #ffffff;}
     .navbar-nav{
-        border-top:1px solid #fed136;
+        border-top:1px solid #000000;
         color:#AC7E07;
         z-index:1;
         margin-top:5px;
@@ -1080,7 +1087,6 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 .navbar-dark .navbar-toggler,
 .navbar-white .navbar-toggler,
 .navbar-cyan .navbar-toggler{
-    background: #FB4E4E;
     border-color: #333;
 }
 .navbar-white .navbar-toggler-icon{
@@ -1099,7 +1105,6 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     .navbar-expand-lg.navbar-dark {background: rgb(215, 223, 239);}
     .navbar-collapse{
         padding-top: 20px;
-        background: #FFBB0B;
     }
 }
 .navbar-white.shrink .navbar-brand,
@@ -1125,6 +1130,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     justify-content: center;
     align-items: center;
 }
+
 .hero-section.app{
     position: relative;
     min-height: 730px;
@@ -1135,10 +1141,23 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     align-items: center;
 }
 
+.kamala-man-mobile {
+    background-color: #20355D;
+    color: white;
+    z-index: -10;
+}
+
+.donald-man-mobile {
+    background-color: #902828;
+    color: white;
+    z-index: -10;
+
+}
+
 .white-house{
     position: relative;
     min-height: 730px;
-    background: url('../img/bg-img/bg-3.png') no-repeat top center;
+    background: url('../img/bg-img/bg-5.png') no-repeat top center;
     background-size: cover;
     display: flex;
     padding-top: 5rem;
@@ -1149,8 +1168,10 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 .white-house-plain{
     position: relative;
     min-height: 730px;
-    background: url('../img/bg-img/bg-4.png') no-repeat bottom center;
+    background-image: url('../img/bg-img/bg-4.png');
     background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
     padding-top: 5rem;
     /* justify-content: center; */
     /* align-items: center; */
@@ -1639,9 +1660,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     .main-ilustration-6{
         height: 65vh 
     }
-    .welcome-content{
-        padding-right: 15px
-    }
+
     .main-ilustration-3{
         background-size: contain;
         background-position: left;
@@ -1743,11 +1762,8 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     margin-bottom: 20px;
 }
 .welcome-content h1 {
-    font-size: 80px;
     font-weight: 900;
     margin-bottom: 20px;
-    margin-left: 5rem;
-    margin-right: 5rem;
 }
 .welcome-content h1.artficial{
     font-size: 38px
@@ -1759,6 +1775,12 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 .trump-img {
     background-color: #902828;
     border-radius: 5px;
+}
+
+.countdown {
+    font-size: 40px;
+    font-family: "Open Sans", sans-serif;
+    color: #012969;
 }
 
 .svg-img {
@@ -3017,6 +3039,18 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     line-height: 1.25;
 }
 /* ##### Service Area CSS ##### */
+
+.service-container {
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 1rem;
+}
+
+.steps-text {
+    font-size: 40px;
+    color: #638BEE;
+
+}
 
 .service_single_content {
     position: relative;
@@ -5026,6 +5060,11 @@ textarea:required {
 }
 
 /* ##### Footer Area ##### */
+.footer-image {
+    width: 100vw; /* Full viewport width */
+
+    object-fit: contain; /* Ensures the image covers the screen */
+}
 
 .footer-area {
     position: relative;
@@ -6535,6 +6574,14 @@ body.light-version {
     margin-bottom: 0rem;
 }
 
+.absolute-pics {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
 .copy-btn {
     position: relative;
     z-index: 1;
@@ -6555,23 +6602,98 @@ body.light-version {
 .agenda-header {
     color: #902828;
     background-color: white;
-    font-size: 30px;
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.mob-agenda-header {
+    color: #902828;
+    background-color: white;
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.small-agenda-header {
+    color: #902828;
+    background-color: white;
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .list-it {
     list-style: disc;
     margin-left: 45px;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .list-it-rt {
     list-style: disc;
     margin-left: 45px;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .list-it-d {
     list-style: disc;
     margin-left: 45px;
     list-style-position: inside;
+    font-family: "Josefin Sans", sans-serif;
+    text-align: right;
+}
+
+.election-text {
+    font-size: calc(90vw * 0.07);
+    font-family: "Josefin Sans", sans-serif;
+    color: #23498F;
+}
+
+.join-font {
+    font-size: 60px;
+}
+
+.mt-5rem {
+    margin-top: 5rem;
+}
+
+.mb-5rem {
+    margin-bottom: 15rem;
+}
+
+@media (max-width:500px) {
+    .list-it, .list-it-rt, .list-it-d {
+        font-size: 13px;
+        margin-left: 25px;
+    }
+
+    .agenda-header {
+        font-size: 15px;
+    }
+
+    .ca-text{
+        font-size: 10px;
+    }
+
+    .election-text {
+        font-size: 50px;
+    }
+
+    .join-font {
+        font-size: 40px;
+    }
+
+    .social-space {
+        margin-left: 30px;
+    }
+
+    .white-house-heading {
+        font-size: 40px;
+    }
+
+    /* .trump-btn, .harris-btn {
+        font-size: 10px !important;
+        line-height: 23px;
+        min-width: 60px;
+        height: 25px;
+    } */
 }
 
 .trump-section {
@@ -6581,8 +6703,28 @@ body.light-version {
     color: white;
 }
 
+.sm-nomics {
+    font-size: 12px;
+}
+
 .header-donald {
     direction: rtl;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.header-kamala {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.header-kamala-mob {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 23px;
+}
+
+.header-donald-mob {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 23px;
+    text-align: right;
 }
 
 .kamala-section {
@@ -6590,15 +6732,19 @@ body.light-version {
     color: white;
 }
 
-.election-text {
-    font-family: "Josefin Sans", sans-serif;
-    color: #23498F;
-}
 
 .total-text {
     font-size: 40px;
     font-family: "Amatic SC", sans-serif;
     color: #23498F;
+}
+
+.total-votes-text {
+    font-size: 30px;
+}
+
+.amatic {
+    font-family: "Amatic SC", sans-serif;
 }
 
 .trump-votes {
@@ -6607,6 +6753,12 @@ body.light-version {
 
 .harris-votes {
     color: #30559A !important;
+}
+
+@media (max-width:500px) {
+    .trump-btn, .harris-btn, .trump-votes, .harris-votes {
+        font-size: 12px !important;
+    }
 }
 
 /* .img-pod {

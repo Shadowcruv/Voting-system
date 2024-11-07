@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/vote")
 public class VoteController {
     @Autowired
     private VotingService votingService;
@@ -18,7 +17,7 @@ public class VoteController {
     public String getVotePage(Model model) {
         VoteCount voteCount = votingService.getVoteCount();
         model.addAttribute("voteCount", voteCount);
-        return "votingg"; // HTML template name
+        return "votinggt"; // HTML template name
     }
 
     @GetMapping("/vote/counts")

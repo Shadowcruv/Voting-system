@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Protus</title>
+    <title>The White House</title>
 
     <!-- Favicon -->
     <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" th:href="@{/css/style.css}">>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" th:href="@{/css/responsive.css}">
@@ -29,46 +29,50 @@
 <body class="">
 
 
-<!-- ##### Header Area Start ##### -->
-<nav class="navbar navbar-expand-lg navbar-white" id="banner">
-    <div class="container">
+    <!-- ##### Header Area Start ##### -->
+    <nav class="navbar navbar-expand-lg" id="banner">
         <!-- Brand -->
-        <a class="navbar-brand" href="#"><span><img draggable="false" th:src="@{/img/core-img/logo.svg}" alt="logo"></span>
+        <a class="navbar-brand col-md-3 col-4" href="https://potusolana.com/"><span><img draggable="false"
+                    th:src="@{/img/core-img/logo.svg}" alt="logo"></span>
         </a>
 
         <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler py-1 px-2" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <img th:src="@{/img/core-img/navbar.svg}" class="breadcrumber" alt="">
         </button>
 
         <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto">
+        <div class="col-9 collapse navbar-collapse justify-content-between align-items-center" id="collapsibleNavbar">
+            <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">MANIFESTO</a>
+                    <a class="nav-link ml-30" href="#manifesto">MANIFESTO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">BIDENOMICS</a>
+                    <a class="nav-link ml-30" href="#tokenomics">TOKENOMICS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">HOW TO BUY </a>
+                    <a class="nav-link ml-30" href="#how-to-buy">HOW TO BUY </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CA</a>
+                    <a class="nav-link ml-30" href="#ca">CA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">COMMUNITY</a>
+                    <a class="nav-link ml-30" href="#community">COMMUNITY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LITEPAPER</a>
+                    <a class="nav-link ml-30" href="https://drive.google.com/file/d/1x6_lEikHegb-OAbjebVKayQjr26Bpk1r/view" target="_blank">LITEPAPER</a>
                 </li>
 
 
-                <li class="lh-55px"><a href="#" target="_blank" class="btn login-btn ml-50">BUY $POTUS</a></li>
-            </ul>
+        </ul>
+        <div class="">
+            <a href="https://pump.fun/7AfMH1WPwFWQ1N8JE7pjxKWdEhSquxMoKfnTLfEepump" target="_blank" class="btn login-btn ml-50">BUY $POTUS</a>
         </div>
+
+
     </div>
+
 </nav>
 <!-- ##### Header Area End ##### -->
 
@@ -76,49 +80,51 @@
 <section class="section-padding relative" id="home">
     <!-- Hero Content -->
     <div class="hero-section-content">
-        <div class="row">
+        <div class="d-md-flex flex-md-row">
             <!-- Welcome Content -->
+            <div class="col-lg-7 order-1 order-md-2">
+                <div class="welcome-content d-flex flex-column justify-content-center align-items-center">
 
-            <div class="col-lg-5">
-                <div class="mt-s">
-                    <img th:src="@{/img/core-img/header-img2.png}" alt="">
-                </div>
-            </div>
-            <div class="col-12 col-lg-7 col-md-12">
-                <div class="welcome-content">
-                    <!-- <div class="promo-section">
-                        <h3 class="special-head">Doing nothing is the greatest accomplishment of all</h3>
-                    </div> -->
-                    <h1 class="fadeInUp text-center election-text" data-wow-delay="0.2s">ELECTION LIVE IN </h1>
-                    <p class="b-text fadeInUp text-center"><span id="countdown">6 Days</span></p>
-                    <p class="b-text fadeInUp text-center total-text"><span id="totalVotes" th:text="${voteCount.totalVotes}"></span></p>
-                    <p class="b-text fadeInUp text-center">TOTAL VOTES</p>
+                    <div class="col-md-12">
+                        <h1 class="text-center election-text" data-wow-delay="0.2s">ELECTION IS LIVE </h1>
+                    </div>
 
-                    <div class="row col-12 align-items-center justify-content-center">
-                        <div class="col-lg-6">
+                    <p class="text-center countdown"><span id="countdown">1 Day</span></p>
+                    <p class="b-text text-center total-text font-weight-bold"><span id="totalVotes" th:text="${voteCount.totalVotes}"></span></p>
+                    <p class="b-text text-center total-votes-text amatic font-weight-bold">TOTAL VOTES</p>
+
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="col-6 my-1">
                             <p class="trump-votes">TRUMP VOTES: <span id="trumpVotes" th:text="${voteCount.trumpVotes}">987</span></p>
                             <button class="btn trump-btn" onclick="voteFor('Trump')" id="trumpButton" th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">Vote for Trump</button>
-                            <div class="row col-12 align-items-center justify-content-center">
-                                <img th:src="@{/img/core-img/trump.png}" class="col-lg-3 trump-img" alt="">
-                                <span class="b-text col-lg-9">Will Donald Trump win the 2024 US Presidential
-                                        Election?</span>
+                        </div>
+                        <div class="col-6 my-1">
+                            <p class="harris-votes">HARRIS VOTES: <span id="kamalaVotes" th:text="${voteCount.kamalaVotes}">654</span></p>
+                            <button class="btn harris-btn" onclick="voteFor('Kamala')" id="kamalaButton"
+                                        th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">Vote for Harris</button>
                             </div>
-                            <div class="row justify-content-end">
-                                <button class="bet-btn btn">BET</button>
+
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row col-12 align-items-center justify-content-center">
+                        <div class="col-12 col-lg-6 my-1">
+
+                            <div class="row col-12 align-items-center">
+
+                                <iframe title="polymarket-market-iframe"
+                                        src="https://embed.polymarket.com/market.html?market=will-donald-trump-win-the-2024-us-presidential-election&features=volume&theme=light"
+                                        width="400" height="180" frameBorder="0"></iframe>
+
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
-                            <p class="harris-votes">HARRIS VOTES: <span id="kamalaVotes" th:text="${voteCount.kamalaVotes}">654</span></p>
-                            <button class="btn harris-btn" onclick="voteFor('Kamala')" id="kamalaButton"
-                                    th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">Vote for Harris</button>
-                            <div class="row col-12 align-items-center justify-content-center">
-                                <img th:src="@{/img/core-img/kamala.png}" class="col-lg-3 kamala-img" alt="">
-                                <span class="b-text col-lg-9">Will Kamala Harris win the 2024 US Presidential
-                                        Election?</span>
-                            </div>
-                            <div class="row justify-content-end">
-                                <button class="bet-btn btn">BET</button>
+                        <div class="col-12 col-lg-6 my-1">
+
+                            <div class="row col-12 align-items-center">
+                                <iframe title="polymarket-market-iframe"
+                                        src="https://embed.polymarket.com/market.html?market=will-kamala-harris-win-the-2024-us-presidential-election&features=volume&theme=light"
+                                        width="400" height="180" frameBorder="0"></iframe>
+
                             </div>
                         </div>
 
@@ -126,12 +132,14 @@
 
 
                     </div>
-                    <!-- <div class="dream-btn-group fadeInUp" data-wow-delay="0.4s">
-                        <a href="#" class="btn more-btn mr-3">Whitepaper</a>
-                        <a href="#" class="btn more-btn">Buy Token</a>
-                    </div> -->
+
                 </div>
             </div>
+
+            <div class="col-lg-5 pl-0 order-2 order-md-1 mt-5 mt-md-0">
+                <img th:src="@{/img/core-img/header-img2.png}" alt="">
+            </div>
+
 
         </div>
     </div>
@@ -155,15 +163,16 @@
     <div class="container">
         <div class="">
 
-            <h4 class="fadeInUp text-center about" data-wow-delay="0.3s">ABOUT</h4>
-            <p class="fadeInUp" data-wow-delay="0.4s">Potus is a meme parody of the office of President Of The
+            <h4 class=" text-center about" data-wow-delay="0.3s">ABOUT</h4>
+            <p class="text-center text-lg-left" data-wow-delay="0.4s">Potus is a meme parody of the office of
+                President Of The
                 United States and it’s administrations.
                 Truly combining memes, politics and finance.</p>
-            <p class="fadeInUp" data-wow-delay="0.4s">
+            <p class="text-center text-lg-left" data-wow-delay="0.4s">
                 Combine the highs and lows of U.S politics with memes and finance for an unforgettable journey to
                 the polls. Be part of the fun and stay entertained with the memes from campaigns, debates, and
                 candidates as we explore the world of politics on-chain..</p>
-            <p class="fadeInUp" data-wow-delay="0.4s">
+            <p class="text-center text-lg-left" data-wow-delay="0.4s">
                 Join the race to the polls on the blockchain as we vote for a
                 better America.
                 Truly combining memes, politics and finance.</p>
@@ -173,21 +182,11 @@
 </section>
 <!-- ##### About Us Area End ##### -->
 
-<section class="clearfix">
-    <!-- <div class="container">
-        <div class="d-inline-block">
-            <div class="contract-add align-items-center">
-                <i class="fa fa-copy"></i>
-                <h6 class="mr-3 mb-0">Smart Contract Address : </h4>
-                <span class="w-text"> 0xe3c127466908c2ccdc43521c8315b87fd369d605</span>
-                <img src="img/core-img/phase-1.png" class="symbol-img" width="100" alt="">
-            </div>
-        </div>
-    </div> -->
+<section class="clearfix hidden-sm" id="manifesto">
 
-    <div class="row justify-content-center align-items-center">
-        <div class="col-6 kamala-section py-4 pl-5">
-            <h1 class="text-white">“The American Dream Belongs To All Of Us.”</h1>
+    <div class="d-flex flex-column flex-md-row align-items-md-stretch justify-content-center align-items-center">
+        <div class="col-12 col-md-6 kamala-section py-4 pl-3">
+            <h1 class="text-white header-kamala">“The American Dream Belongs To All Of Us.”</h1>
             <ul>
                 <li class="list-it">Kamala Harris</li>
             </ul>
@@ -202,26 +201,27 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <h1 class="agenda-header">Economic Reforms </h1>
+                    <h1 class="agenda-header">Taxes</h1>
                     <div>
                         <ul>
-                            <li class="list-it">Mortgage Assistance and tax-credit for parents of newborns</li>
-                            <li class="list-it">$50k tax credit for small and new businesses.</li>
+                            <li class="list-it">Increase Corporate Tax to 35% from 21%.</li>
+                            <li class="list-it">Increased tax for the highest earners.</li>
                         </ul>
                     </div>
+
                 </div>
             </div>
             <div class="row col-12 justify-content-center align-items-center">
                 <div class="col-6">
-                    <img th:src="@{/img/core-img/kam-pod.png}" class="img-pod" alt="">
+                    <img src="img/core-img/kam-pod.png" class="img-pod" alt="">
                 </div>
                 <div class="col-6">
                     <div class="my-4">
-                        <h1 class="agenda-header">Taxes</h1>
+                        <h1 class="small-agenda-header">Economic Reform</h1>
                         <div>
                             <ul>
-                                <li class="list-it">Increase Corporate Tax to 35% from 21%.</li>
-                                <li class="list-it">Increased tax for the highest earners.</li>
+                                <li class="list-it">Mortgage Assistance and tax-credit for parents of newborns</li>
+                                <li class="list-it">$50k tax credit for small and new businesses.</li>
                             </ul>
                         </div>
                     </div>
@@ -234,7 +234,7 @@
                         </div>
                     </div>
                     <div class="my-4">
-                        <h1 class="agenda-header">Gender Rights and Abortion :</h1>
+                        <h1 class="agenda-header">Gender Rights and Abortion</h1>
                         <div>
                             <ul>
                                 <li class="list-it">Better reproductive rights and unregulated right to abortion.
@@ -244,37 +244,37 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-
-        </div>
-        <div class="col-6 trump-section py-4 pr-5">
-            <h1 class="text-white header-donald">“Together, we will Make America Great Again.”</h1>
-            <ul>
-                <li class="list-it-d">Donald Trump </li>
-            </ul>
-            <div class="row col-12 justify-content-center align-items-center my-4">
-                <div class="col-6">
-                    <h1 class="agenda-header">Border Security</h1>
-                    <div>
-                        <ul>
-                            <li class="list-it-rt">Enforce stricter immigration laws. </li>
-                            <li class="list-it-rt">Mass deportation of illegal immigrants.</li>
-                        </ul>
                     </div>
                 </div>
-                <div class="col-6">
-                    <h1 class="agenda-header">Economic Reforms</h1>
-                    <div>
-                        <ul>
-                            <li class="list-it-rt">Reduce housing through home building programme. </li>
-                            <li class="list-it-rt">Keep the U.S. dollar as the world's reserve currency</li>
-                        </ul>
+
+
+            </div>
+            <div class="col-12 col-md-6 trump-section py-4 pr-2">
+                <h1 class="text-white header-donald">“Together, we will Make America Great Again”</h1>
+                <ul>
+                    <li class="list-it-d">Donald Trump </li>
+                </ul>
+                <div class="d-flex col-12 justify-content-between align-items-center my-4">
+                    <div class="col-6">
+                        <h1 class="agenda-header">Border Security</h1>
+                        <div>
+                            <ul>
+                                <li class="list-it-rt">Enforce stricter immigration laws. </li>
+                                <li class="list-it-rt">Mass deportation of illegal immigrants.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h1 class="agenda-header">Economic Reform</h1>
+                        <div>
+                            <ul>
+                                <li class="list-it-rt">Reduce housing through home building programme. </li>
+                                <li class="list-it-rt">Keep the U.S. dollar as the world's reserve currency</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row col-12 justify-content-center align-items-center">
+                <div class="row col-12 justify-content-center align-items-center">
 
                 <div class="col-6">
                     <div class="my-4">
@@ -282,7 +282,8 @@
                         <div>
                             <ul>
                                 <li class="list-it-rt">Cut corporate tax to 15%</li>
-                                <li class="list-it-rt">Remove Income tax on tips, Social Security, and overtime pay.</li>
+                                <li class="list-it-rt">Remove Income tax on tips, Social Security, and overtime pay.
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -318,64 +319,214 @@
 
 </section>
 
-<section class="white-house">
-    <div class="container white-house-container">
-        <div class="row justify-content-between">
-            <div class="col-3 row align-items-center justify-content-center">
+<section class="manifesto-mobile hidden-lg">
+    <div class="kamala-man-mobile py-4 relative">
+        <h1 class="text-white header-kamala-mob ml-1">“The American Dream Belongs To All Of Us.”</h1>
+        <ul class="ml-1">
+            <li class="list-it">Kamala Harris</li>
+        </ul>
+
+        <div class="d-flex justify-content-center align-items-end">
+            <div class="col-6 mb-5">
+                <h1 class="agenda-header">Taxes</h1>
                 <div>
-                    <img th:src="@{/img/core-img/2.png}" class="" alt="">
-                    <h5 class="text-center">$POTUS</h5>
+                    <ul>
+                        <li class="list-it">Increase Corporate Tax to 35% from 21%.</li>
+                        <li class="list-it">Increased tax for the highest earners.</li>
+                    </ul>
                 </div>
+            </div>
+            <div class="col-6 d-flex flex-column">
+                <div class="mb-4">
+                    <h1 class="agenda-header">Immigration</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it">Softer immigration laws.</li>
+                            <li class="list-it">Easy pathway to citizenship for immigrants.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="my-4">
+                    <h1 class="agenda-header">Climate Change</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it">Limitation and possible ban on fracking</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <div class="col-9 mb-4">
+                <h1 class="agenda-header">Gender Rights and Abortion</h1>
+                <div>
+                    <ul>
+                        <li class="list-it">Better reproductive rights and unregulated right to abortion.</li>
+                        <li class="list-it">Tax-funded gender surgeries for children and prisoners.</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-8">
+                <h1 class="agenda-header">Economic Reform</h1>
+                <div>
+                    <ul>
+                        <li class="list-it">Mortgage Assistance and tax-credit for parents of newborns</li>
+                        <li class="list-it">$50k tax credit for small and new businesses</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="absolute-pics">
+            <img th:src="@{/img/core-img/kam-pod.png}" class="img-pod" alt="">
+        </div>
+
+    </div>
+    <div class="donald-man-mobile py-4 relative">
+        <h1 class="text-white header-donald-mob mr-1">“Together, we will Make America Great Again”</h1>
+        <ul class="mr-1">
+            <li class="list-it-d">Donald Trump</li>
+        </ul>
+
+        <div class="d-flex justify-content-center">
+            <div class="col-6 d-flex flex-column align-items-end">
+                <div class="mb-5 mt-5rem">
+                    <h1 class="agenda-header">Economic Reforms</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it">Reduce housing through home building programme.</li>
+                            <li class="list-it">Keep the U.S. dollar as the world's reserve currency</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="mb-2">
+                    <h1 class="agenda-header">Warfare</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it">Dissociate the US from wars and conflicts worldwide.</li>
+                            <li class="list-it">Strengthen and modernize the military</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-6 d-flex flex-column align-items-start">
+                <div class="mb-4 mt-2">
+                    <h1 class="agenda-header">Taxes</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it">Cut corporate tax to 15%.</li>
+                            <li class="list-it">Remove Income tax on tips, Social Security, and overtime pay.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="my-4">
+                    <h1 class="agenda-header">Border Security</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it">Enforce stricter immigration laws.</li>
+                            <li class="list-it">Mass deportation of illegal immigrants.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="col-9">
+                <h1 class="agenda-header">Criminal Justice Reform</h1>
+                <div>
+                    <ul>
+                        <li class="list-it">Ensure the first amendment is fully enforced.</li>
+                        <li class="list-it">Uphold the 2nd Amendment and gun rights.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="absolute-pics">
+            <img th:src="@{/img/core-img/trump-pod.png}" class="img-pod" alt="">
+        </div>
+
+    </div>
+
+
+</section>
+
+<section class="white-house" id="tokenomics">
+    <div class="container white-house-container">
+        <div class="d-flex justify-content-center">
+            <div class="col-3 d-flex flex-column align-items-center justify-content-center ml-1">
+
+                <div class="image-container">
+                    <img src="img/core-img/2.png" class="img-fluid" alt="">
+                </div>
+
+                <h5 class="text-center">$POTUS</h5>
+                <h6 class="blood-red hidden-lg text-center sm-nomics">TRUMPNOMICS?</h6>
+
 
             </div>
             <div class="col-6">
                 <h3 class="white-house-heading text-center blood-red">BIDENOMICS</h3>
                 <h5 class="text-center">What is it going to be folks?</h5>
                 <div class="row justify-content-between">
-                    <h5 class="text-center blood-red">TRUMPNOMICS?</h5>
-                    <h5 class="text-center blood-red">KAMALANOMICS??</h5>
+                    <h5 class="text-center blood-red hidden-sm">TRUMPNOMICS?</h5>
+                    <h5 class="text-center blood-red hidden-sm">KAMALANOMICS??</h5>
                 </div>
-                <h5 class="text-center">Supply Information</h5>
+                <!-- <h5 class="text-center">Supply Information</h5> -->
             </div>
-            <div class="col-3 row align-items-center justify-content-center">
-                <div>
-                    <img th:src="@{/img/core-img/2.png}" class="" alt="">
-                    <h5 class="text-center">$POTUS</h5>
+            <div class="col-3 d-flex flex-column align-items-center justify-content-center ml-1">
+
+                <div class="image-container">
+                    <img th:src="@{/img/core-img/2.png}" class="img-fluid" alt="">
                 </div>
+
+
+                <h5 class="text-center">$POTUS</h5>
+                <h6 class="blood-red hidden-lg text-center sm-nomics">KAMALANOMICS?</h6>
+
 
             </div>
 
         </div>
-        <div class="row justify-content-center face-down">
+        <!-- <div class="row justify-content-center face-down">
             <div class="col-3 row align-items-center justify-content-center">
                 <div>
-                    <img th:src="@{/img/core-img/4.png}" class="" alt="">
+                    <img src="img/core-img/4.png" class="" alt="">
                     <h5 class="text-center">LP Burnt</h5>
                 </div>
 
             </div>
             <div class="col-3 row align-items-center justify-content-center">
                 <div>
-                    <img th:src="@{/img/core-img/5.png}" class="" alt="">
+                    <img src="img/core-img/5.png" class="" alt="">
                     <h5 class="text-center">Mint Revoked</h5>
                 </div>
 
             </div>
             <div class="col-3 row align-items-center justify-content-center">
                 <div>
-                    <img th:src="@{/img/core-img/6.png}" class="" alt="">
+                    <img src="img/core-img/6.png" class="" alt="">
                     <h5 class="text-center">0% Tax</h5>
                 </div>
 
             </div>
 
-        </div>
+        </div> -->
 
     </div>
 </section>
 
 
-<section class="darky how section-padding-0-70" id="story">
+<section class="darky how section-padding-0-70" id="how-to-buy">
 
     <div class="container">
 
@@ -387,80 +538,94 @@
             <h2 class="about fadeInUp" data-wow-delay="0.3s">How To Buy</h2>
             <!-- <p class="wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.</p> -->
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
+        <div
+                class="d-flex flex-column flex-md-row justify-content-center align-items-center align-items-md-stretch">
+            <div class="col-8 service-container col-lg-3 d-flex">
                 <!-- Content -->
-                <div class="service_single_content box-shadow text-center mb-100 wow fadeInUp">
-                    <h6>1</h6>
+                <div class="d-flex flex-column justify-content-between text-center mb-100 wow fadeInUp">
+                    <h6 class="total-text b-text font-weight-bold">1</h6>
 
-                    <h6 class="about">CREATE A WALLET</h6>
+                    <h6 class="steps-text amatic">CREATE A WALLET</h6>
                     <p class="less-line-height">Download Phantom or Solflare wallet from
                         the App Store or Play Store.
                         For desktop users, get the Phantom or Solflare wallet extension.
                     </p>
-                    <div>
-                        <a href="#" target="_blank" class="btn purple-btn"><span><img th:src="@{/img/core-img/Vector.svg}" class="btn-img" alt="">WALLET</span></a>
+                    <div class="d-flex flex-column justify-content-space-between">
+                        <div>
+                            <a href="https://phantom.app/download" target="_blank" class="btn purple-btn"><span><img
+                                    th:src="@{/img/core-img/Vector.svg}" class="btn-img" alt="">WALLET</span></a>
+                        </div>
+                        <div>
+                            <a href="https://solflare.com" target="_blank" class="btn dark-btn"><span><img
+                                    th:src="@{/img/core-img/image 3.svg}" class="dark-btn-img" alt="">WALLET</span></a>
+                        </div>
+
                     </div>
-                    <div>
-                        <a href="#" target="_blank" class="btn dark-btn"><span><img th:src="@{/img/core-img/image 3.svg}" class="dark-btn-img" alt="">WALLET</span></a>
-                    </div>
+
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-8 service-container col-lg-3 d-flex">
                 <!-- Content -->
-                <div class="service_single_content box-shadow text-center mb-100 wow fadeInUp">
-                    <h6>2</h6>
+                <div class="d-flex flex-column justify-content-between text-center mb-100 wow fadeInUp">
+                    <h6 class="total-text b-text font-weight-bold">2</h6>
 
-                    <h6 class="about">Get some SOL</h6>
+                    <h6 class="steps-text amatic">Get some SOL</h6>
                     <p class="less-line-height">
                         Buy some Sol in your Phantom wallet using Moonpay or any other provider.
                         You can also buy Sol from a Centralized exchange and send to your wallet.
                     </p>
                     <div>
-                        <a href="#" target="_blank" class="btn blue-btn">SEE MORE</a>
+                        <a href="https://phantom.app/learn/guides/how-to-buy-ethereum-eth-polygon-matic-and-solana-sol"
+                           target="_blank" class="btn blue-btn">SEE MORE</a>
                     </div>
 
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-8 service-container col-lg-3 d-flex">
                 <!-- Content -->
-                <div class="service_single_content box-shadow text-center mb-100 wow fadeInUp">
-                    <h6>3</h6>
+                <div class="d-flex flex-column justify-content-between text-center mb-100 wow fadeInUp">
+                    <h6 class="total-text b-text font-weight-bold">3</h6>
 
-                    <h6 class="about">Go to Jupiter</h6>
-                    <p class="less-line-height">In your wallets browser, open Jupiter and connect your wallet.
-                        Under “You’re Buying”, paste the <span class="orange-text">$Potus</span> contract address and make sure to select Sol under “You’re Selling”.
+                    <h6 class="steps-text amatic">Go to PUMP.FUN</h6>
+                    <p class="less-line-height">In your wallets browser, open <span class="orange-text">pump.fun</span> and connect your wallet.
+                        Paste our contract address under search for token.
+                        You will find our Pump page, click on it.
                     </p>
                     <div>
-                        <a href="#" target="_blank" class="btn blue-btn">SEE MORE</a>
+                        <a href="https://pump.fun/" target="_blank" class="btn blue-btn">PUMP.FUN</a>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
+            <div class="col-8 service-container dark-box col-lg-3 d-flex">
                 <!-- Content -->
-                <div class="service_single_content box-shadow text-center mb-100 wow fadeInUp dark-box">
-                    <h6 class="text-white">4</h6>
+                <div class="d-flex flex-column justify-content-between text-center mb-100 wow fadeInUp">
+                    <h6 class="total-text text-white font-weight-bold">4</h6>
 
-                    <h6 class="about text-white">$POTUS</h6>
-                    <p class="less-line-height text-white">Select the amount of <span class="orange-text">$Potus</span>  you want to buy,
-                        click on swap and confirm the transaction prompt on your wallet.
+                    <h6 class="steps-text amatic text-white">$POTUS</h6>
+                    <p class="less-line-height text-white">Select the amount of Sol you want to swap for <span class="orange-text">$Potus</span>
+                        click on swap and confirm the transaction prompt.
+                        You will find <span class="orange-text">$Potus</span> in your wallet.
                     </p>
                     <div>
-                        <a href="#" target="_blank" class="btn orange-btn">COPY CA</a>
+                        <button onclick="copyToClipboard()" class="btn orange-btn">Copy CA</button>
                     </div>
 
                 </div>
             </div>
 
         </div>
-        <h2 class="text-center">CA : ANoNCaCsTiVQhGcUoQcuEwxp1NgUA4AXEbRnY3EFKnm</h2>
+        <h2 class="text-center ca-text mt-5" id="ca">7AfMH1WPwFWQ1N8JE7pjxKWdEhSquxMoKfnTLfEepump</h2>
     </div>
 </section>
 
 
 <section class="d-flex justify-content-center white-house-plain relative">
     <div class="d-flex justify-content-center align-items-end abs">
-        <img th:src="@{/img/core-img/Frame 34220.png}" class="speech-img" alt="">
+        <div class="col-8 col-lg-12">
+            <img th:src="@{/img/core-img/Frame 34220.png}" class="" alt="">
+
+        </div>
+
     </div>
 
 </section>
@@ -477,16 +642,23 @@
         </div>
     </div> -->
     <div class="container">
-        <div class="d-flex flex-column justify-content-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
 
             <h2 class="fadeInUp text-center orange-text" data-wow-delay="0.3s">Disclaimer</h2>
-            <h5 class="fadeInUp text-center" data-wow-delay="0.4s">Please be advised that <span class="orange-text">$Potus</span> is a cryptocurrency
+            <h5 class="fadeInUp text-center" data-wow-delay="0.4s">Please be advised that <span
+                    class="orange-text">$Potus</span> is a cryptocurrency
                 created for entertainment purposes and is not affiliated with or endorsed by any presidential
-                candidate or political party. While <span class="orange-text">$Potus</span> may reference or incorporate elements related to various
+                candidate or political party. While <span class="orange-text">$Potus</span> may reference or
+                incorporate elements related to various
                 politicians, it does not imply any direct endorsement, partnership, or approval. Any resemblance or
-                association between <span class="orange-text">$Potus</span> characters and any politician is purely coincidental
+                association between <span class="orange-text">$Potus</span> characters and any politician is purely
+                coincidental
                 and intended for entertainment or humorous purposes only.</h5>
-            <img th:src="@{/img/core-img/15.svg}" class="small-img" alt="">
+            <div class="col-12 col-lg-8">
+                <img th:src="@{/img/core-img/15.svg}" class="" alt="">
+
+            </div>
+
 
 
         </div>
@@ -499,93 +671,109 @@
 
     <div class="footer-content-area ">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="contact_info_area d-sm-flex justify-content-between">
-                    <!-- Content Info -->
-                    <div class="contact_info mt-s text-center fadeInUp" data-wow-delay="0.4s">
+            <h2 class="text-center amatic join-font" id="community">Join the community</h2>
 
-
-                        <h2>Join the community</h2>
-
-                        <!-- <input type="text" id="textToCopy" value="Copy this text" readonly> -->
+            <!-- <input type="text" id="textToCopy" value="Copy this text" readonly> -->
 
 
 
-                        <div class="footer-social-info fadeInUp justify-content-between" data-wow-delay="0.4s">
-                            <a href="https://x.com/TanonTron" target="_blank">    <img th:src="@{/img/core-img/SVG.svg}" class="svg-img" alt=""></a>
-                            <a href="https://x.com/TanonTron" target="_blank">    <img th:src="@{/img/core-img/tel.svg}" class="tel-img" alt=""></a>
-                            <a href="https://x.com/TanonTron" target="_blank">    <img th:src="@{/img/core-img/gh.svg}" class="gh-img" alt=""></a>
-                            <a href="https://x.com/TanonTron" target="_blank">    <img th:src="@{/img/core-img/ico.svg}" class="ico-img" alt=""></a>
+            <div class="footer-social-info fadeInUp justify-content-space-between" data-wow-delay="0.4s">
+                <a href="https://x.com/potusolana" target="_blank"> <img th:src="@{/img/core-img/SVG.svg}" class="svg-img"
+                            alt=""></a>
+                <a href="https://t.me/potusolanaportal" target="_blank"> <img th:src="@{/img/core-img/tele.png}"
+                            class="tel-img social-space" alt=""></a>
+                    <img th:src="@{/img/core-img/dex.png}" class="gh-img social-space"
+                     alt="">
+                    <img th:src="@{/img/core-img/dtools.png}" class="ico-img social-space"
+                         alt="">
+<!--                    <a href="#" target="_blank"> <img th:src="@{/img/core-img/dex.png}" class="gh-img social-space"-->
+<!--                            alt=""></a>-->
+<!--                    <a href="#" target="_blank"> <img th:src="@{/img/core-img/dtools.png}" class="ico-img social-space"-->
+<!--                            alt=""></a>-->
 
-                        </div>
-
-
-                    </div>
-                </div>
             </div>
 
         </div>
 
     </div>
-    <img th:src="@{/img/core-img/1.png}" alt="">
+    <img th:src="@{/img/core-img/1.png}" alt="" class="footer-image mb-0">
 </footer>
 <!-- ##### Footer Area End ##### -->
 
-<!-- ########## All JS ########## -->
-<!-- jQuery js -->
-<script th:src="@{/js/jquery.min.js}"></script>
-<!-- Popper js -->
-<script th:src="@{/js/popper.min.js}"></script>
-<!-- Bootstrap js -->
-<script th:src="@{/js/bootstrap.min.js}"></script>
-<!-- All Plugins js -->
-<script th:src="@{/js/plugins.js}"></script>
-<!-- Parallax js -->
-<script th:src="@{/js/dzsparallaxer.js}"></script>
+    <!-- ########## All JS ########## -->
+    <!-- jQuery js -->
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <!-- Popper js -->
+    <script th:src="@{/js/popper.min.js}"></script>
+    <!-- Bootstrap js -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- All Plugins js -->
+    <script th:src="@{/js/plugins.js}"></script>
+    <!-- Parallax js -->
+    <script th:src="@{/js/dzsparallaxer.js}"></script>
 
-<script th:src="@{/js/jquery.syotimer.min.js}"></script>
+    <script th:src="@{/js/jquery.syotimer.min.js}"></script>
 
-<!-- script js -->
-<script th:src="@{/js/script.js}"></script>
+    <!-- script js -->
+    <script th:src="@{/js/script.js}"></script>
 
-<script th:inline="javascript">
-    function copyToClipboard() {
-        // event.preventDefault();
-        // Get the text field
-        var textField = document.getElementById("textToCopy").innerText;
+    <script th:inline="javascript">
 
-        // Copy the text inside the text field
-        navigator.clipboard.writeText(textField).then(() => {
-            // alert('Copied to clipboard!');
-            var paragraph = document.getElementById('copy-btn');
-            paragraph.textContent = 'copied!';
+        document.getElementById("iconLink").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent navigation if it's a link
 
-            setTimeout(() => {
-                document.getElementById("copy-btn").innerText = "Copy";
-            }, 3000);
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
+            const icon = this.querySelector("i");
+
+            // Toggle between the "fa-home" and "fa-check" classes
+            if (icon.classList.contains("fa-home")) {
+                icon.classList.replace("fa-home", "fa-check");
+            } else {
+                icon.classList.replace("fa-check", "fa-home");
+            }
+
+            // Optional: Add active state styling
+            this.classList.toggle("active");
         });
+        function copyToClipboard() {
+            // event.preventDefault();
+            // Get the text field
+            // var textField = document.getElementById("textToCopy").innerText;
+            var textField = '7AfMH1WPwFWQ1N8JE7pjxKWdEhSquxMoKfnTLfEepump';
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(textField).then(() => {
+                // alert('Copied to clipboard!');
+                var paragraph = document.getElementById('copy-btn');
+                paragraph.textContent = 'copied!';
+
+
+                setTimeout(() => {
+                    document.getElementById("copy-btn").innerText = "Copy";
+                }, 3000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+            alert("CA copied to clipboard!");
     }
 
     /* Initialize variables with Thymeleaf expressions */
     // const endTime = /*[[${#dates.format(voteCount.endTime, 'yyyy-MM-dd''T''HH:mm:ss.SSSZ')}]]*/ "";
 
-    const countdownDuration = 518400; // 6 days in seconds
+    // const countdownDuration = 68400; // 6 days in seconds
 
     // Get end time from localStorage or set it for the first time
-    let endTime = localStorage.getItem("endTime");
-    if (!endTime) {
-        endTime = Date.now() + countdownDuration * 1000; // Set end time
-        localStorage.setItem("endTime", endTime);
-    } else {
-        endTime = parseInt(endTime);
-    }
+    // let endTime = localStorage.getItem("endTime");
+    // if (!endTime) {
+    //     endTime = Date.now() + countdownDuration * 1000; // Set end time
+        // localStorage.setItem("endTime", endTime);
+    // } else {
+    //     endTime = parseInt(endTime);
+    // }
 
 
     /* Function to handle voting */
     function voteFor(candidate) {
-        fetch('/vote/cast?candidate=' + candidate, { method: 'POST' })
+        fetch('/cast?candidate=' + candidate, { method: 'POST' })
             .then(response => {
                 if (response.ok) {
                     // Update the vote count without reloading the page
@@ -627,24 +815,54 @@
     }
 
     /* Countdown Timer */
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const end = new Date(endTime).getTime();
-        const timeLeft = Math.max((end - now) / 1000, 0);
+    // function updateCountdown() {
+    //     const now = new Date().getTime();
+    //     const end = new Date(endTime).getTime();
+    //     const timeLeft = Math.max((end - now) / 1000, 0);
+    //
+    //     if (true) {
+    //         const days = Math.floor(timeLeft / (24 * 3600));
+    //         const hours = Math.floor((timeLeft % (24 * 3600)) / 3600);
+    //         const minutes = Math.floor((timeLeft % 3600) / 60);
+    //         const seconds = Math.floor(timeLeft % 60);
+    //
+    //         document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    //     } else {
+    //         document.getElementById("countdown").innerText = "Voting has ended";
+    //         document.getElementById("trumpButton").disabled = true;
+    //         document.getElementById("kamalaButton").disabled = true;
+    //     }
+    // }
 
-        if (true) {
-            const days = Math.floor(timeLeft / (24 * 3600));
-            const hours = Math.floor((timeLeft % (24 * 3600)) / 3600);
-            const minutes = Math.floor((timeLeft % 3600) / 60);
-            const seconds = Math.floor(timeLeft % 60);
-
-            document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        } else {
-            document.getElementById("countdown").innerText = "Voting has ended";
-            document.getElementById("trumpButton").disabled = true;
-            document.getElementById("kamalaButton").disabled = true;
+        // Calculate the next 1:00 PM as the end time
+        function getNext1PM() {
+            const now = new Date();
+            let next1PM = new Date();
+            next1PM.setDate(now.getDate() + 1); // Move to the next day
+            next1PM.setHours(3, 0, 0, 0); // Set to 1:00 PM (13:00) exactly
+            return next1PM.getTime();
         }
-    }
+
+        // document.getElementById("copyCa").disabled = true;
+        let endTime = getNext1PM();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = Math.max((endTime - now) / 1000, 0);
+
+            if (true) {
+                const days = Math.floor(timeLeft / (24 * 3600));
+                const hours = Math.floor((timeLeft % (24 * 3600)) / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = Math.floor(timeLeft % 60);
+
+                document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById("countdown").innerText = "Voting has ended";
+                document.getElementById("trumpButton").disabled = true;
+                document.getElementById("kamalaButton").disabled = true;
+            }
+        }
 
     /* Start the countdown and update every second */
     setInterval(updateCountdown, 1000);
