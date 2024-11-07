@@ -41,10 +41,10 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build Docker image
-      run: docker build -t shadowcruv/votti:latest .
+      run: docker build -t shadowcruv/lar:latest .
 
     - name: list docker images
       run: docker images
 
     - name: Push Docker image
-      run: docker push shadowcruv/votti:latest
+      run: docker push shadowcruv/lar:latest

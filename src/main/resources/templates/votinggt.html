@@ -86,10 +86,10 @@
                 <div class="welcome-content d-flex flex-column justify-content-center align-items-center">
 
                     <div class="col-md-12">
-                        <h1 class="text-center election-text" data-wow-delay="0.2s">ELECTION IS LIVE </h1>
+                        <h1 class="text-center election-text" data-wow-delay="0.2s">VOTING HAS ENDED!!! </h1>
                     </div>
 
-                    <p class="text-center countdown"><span id="countdown">1 Day</span></p>
+                    <p class="text-center countdown"><span id="countdown" style="color: red;"></span></p>
                     <p class="b-text text-center total-text font-weight-bold"><span id="totalVotes" th:text="${voteCount.totalVotes}"></span></p>
                     <p class="b-text text-center total-votes-text amatic font-weight-bold">TOTAL VOTES</p>
 
@@ -844,7 +844,7 @@
             const now = new Date().getTime();
             const timeLeft = Math.max((endTime - now) / 1000, 0);
 
-            if (true) {
+            if (false) {
                 const days = Math.floor(timeLeft / (24 * 3600));
                 const hours = Math.floor((timeLeft % (24 * 3600)) / 3600);
                 const minutes = Math.floor((timeLeft % 3600) / 60);
@@ -852,7 +852,7 @@
 
                 document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             } else {
-                document.getElementById("countdown").innerText = "Voting has ended";
+                document.getElementById("countdown").innerText = "What's next?";
                 document.getElementById("trumpButton").disabled = true;
                 document.getElementById("kamalaButton").disabled = true;
             }
