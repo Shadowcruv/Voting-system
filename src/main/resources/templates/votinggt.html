@@ -29,40 +29,40 @@
 <body class="">
 
 
-    <!-- ##### Header Area Start ##### -->
-    <nav class="navbar navbar-expand-lg" id="banner">
-        <!-- Brand -->
-        <a class="navbar-brand col-md-3 col-4" href="https://potusolana.com/"><span><img draggable="false"
-                    th:src="@{/img/core-img/logo.svg}" alt="logo"></span>
-        </a>
+<!-- ##### Header Area Start ##### -->
+<nav class="navbar navbar-expand-lg" id="banner">
+    <!-- Brand -->
+    <a class="navbar-brand col-md-3 col-4" href="https://potusolana.com/"><span><img draggable="false"
+                                                                                     th:src="@{/img/core-img/logo.svg}" alt="logo"></span>
+    </a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler py-1 px-2" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <img src="img/core-img/navbar.svg" class="breadcrumber" alt="">
-        </button>
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler py-1 px-2" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <img src="img/core-img/navbar.svg" class="breadcrumber" alt="">
+    </button>
 
-        <!-- Navbar links -->
-        <div class="col-9 collapse navbar-collapse justify-content-between align-items-center" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+    <!-- Navbar links -->
+    <div class="col-9 collapse navbar-collapse justify-content-between align-items-center" id="collapsibleNavbar">
+        <ul class="navbar-nav">
 
-                <li class="nav-item">
-                    <a class="nav-link ml-30" href="#manifesto">MANIFESTO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ml-30" href="#tokenomics">TOKENOMICS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ml-30" href="#how-to-buy">HOW TO BUY </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ml-30" href="#ca">CA</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ml-30" href="#community">COMMUNITY</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ml-30" href="https://drive.google.com/file/d/1x6_lEikHegb-OAbjebVKayQjr26Bpk1r/view" target="_blank">LITEPAPER</a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link ml-30" href="#manifesto">MANIFESTO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ml-30" href="#tokenomics">TOKENOMICS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ml-30" href="#how-to-buy">HOW TO BUY </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ml-30" href="#ca">CA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ml-30" href="#community">COMMUNITY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ml-30" href="https://drive.google.com/file/d/1x6_lEikHegb-OAbjebVKayQjr26Bpk1r/view" target="_blank">LITEPAPER</a>
+            </li>
 
 
         </ul>
@@ -101,8 +101,8 @@
                         <div class="col-6 my-1">
                             <p class="harris-votes">HARRIS VOTES: <span id="kamalaVotes" th:text="${voteCount.kamalaVotes}">654</span></p>
                             <button class="btn harris-btn" onclick="voteFor('Kamala')" id="kamalaButton"
-                                        th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">Vote for Harris</button>
-                            </div>
+                                    th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">Vote for Harris</button>
+                        </div>
 
                     </div>
 
@@ -237,37 +237,37 @@
                         </div>
                     </div>
 
-                    </div>
                 </div>
-
-
             </div>
-            <div class="col-12 col-md-6 trump-section py-4 pr-2">
-                <h1 class="text-white header-donald">“Together, we will Make America Great Again”</h1>
-                <ul>
-                    <li class="list-it-d">Donald Trump </li>
-                </ul>
-                <div class="d-flex col-12 justify-content-between align-items-center my-4">
-                    <div class="col-6">
-                        <h1 class="agenda-header">Border Security</h1>
-                        <div>
-                            <ul>
-                                <li class="list-it-rt">Enforce stricter immigration laws. </li>
-                                <li class="list-it-rt">Mass deportation of illegal immigrants.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <h1 class="agenda-header">Economic Reform</h1>
-                        <div>
-                            <ul>
-                                <li class="list-it-rt">Reduce housing through home building programme. </li>
-                                <li class="list-it-rt">Keep the U.S. dollar as the world's reserve currency</li>
-                            </ul>
-                        </div>
+
+
+        </div>
+        <div class="col-12 col-md-6 trump-section py-4 pr-2">
+            <h1 class="text-white header-donald">“Together, we will Make America Great Again”</h1>
+            <ul>
+                <li class="list-it-d">Donald Trump </li>
+            </ul>
+            <div class="d-flex col-12 justify-content-between align-items-center my-4">
+                <div class="col-6">
+                    <h1 class="agenda-header">Border Security</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it-rt">Enforce stricter immigration laws. </li>
+                            <li class="list-it-rt">Mass deportation of illegal immigrants.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="row col-12 justify-content-center align-items-center">
+                <div class="col-6">
+                    <h1 class="agenda-header">Economic Reform</h1>
+                    <div>
+                        <ul>
+                            <li class="list-it-rt">Reduce housing through home building programme. </li>
+                            <li class="list-it-rt">Keep the U.S. dollar as the world's reserve currency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-12 justify-content-center align-items-center">
 
                 <div class="col-6">
                     <div class="my-4">
@@ -569,7 +569,7 @@
                     </p>
                     <div>
                         <a href="https://phantom.app/learn/guides/how-to-buy-ethereum-eth-polygon-matic-and-solana-sol"
-                        target="_blank" class="btn blue-btn">SEE MORE</a>
+                           target="_blank" class="btn blue-btn">SEE MORE</a>
                     </div>
 
                 </div>
@@ -600,9 +600,9 @@
                         You will find <span class="orange-text">$Potus</span> in your wallet.
                     </p>
                     <div>
-<!--                    <a href="#" target="_blank" class="btn orange-btn">COPY CA</a>-->
-                            <button onclick="copyToClipboard()" class="btn orange-btn">Copy CA</button>
-                        </div>
+                        <!--                    <a href="#" target="_blank" class="btn orange-btn">COPY CA</a>-->
+                        <button onclick="copyToClipboard()" class="btn orange-btn">Copy CA</button>
+                    </div>
 
                 </div>
             </div>
@@ -673,17 +673,17 @@
 
             <div class="footer-social-info fadeInUp justify-content-space-between" data-wow-delay="0.4s">
                 <a href="https://x.com/potusolana" target="_blank"> <img th:src="@{/img/core-img/SVG.svg}" class="svg-img"
-                            alt=""></a>
+                                                                         alt=""></a>
                 <a href="https://t.me/potusolanaportal" target="_blank"> <img th:src="@{/img/core-img/tele.png}"
-                            class="tel-img social-space" alt=""></a>
-                    <img th:src="@{/img/core-img/dex.png}" class="gh-img social-space"
+                                                                              class="tel-img social-space" alt=""></a>
+                <img th:src="@{/img/core-img/dex.png}" class="gh-img social-space"
                      alt="">
-                    <img th:src="@{/img/core-img/dtools.png}" class="ico-img social-space"
-                         alt="">
-<!--                    <a href="#" target="_blank"> <img th:src="@{/img/core-img/dex.png}" class="gh-img social-space"-->
-<!--                            alt=""></a>-->
-<!--                    <a href="#" target="_blank"> <img th:src="@{/img/core-img/dtools.png}" class="ico-img social-space"-->
-<!--                            alt=""></a>-->
+                <img th:src="@{/img/core-img/dtools.png}" class="ico-img social-space"
+                     alt="">
+                <!--                    <a href="#" target="_blank"> <img th:src="@{/img/core-img/dex.png}" class="gh-img social-space"-->
+                <!--                            alt=""></a>-->
+                <!--                    <a href="#" target="_blank"> <img th:src="@{/img/core-img/dtools.png}" class="ico-img social-space"-->
+                <!--                            alt=""></a>-->
 
             </div>
 
@@ -694,60 +694,60 @@
 </footer>
 <!-- ##### Footer Area End ##### -->
 
-    <!-- ########## All JS ########## -->
-    <!-- jQuery js -->
-    <script th:src="@{/js/jquery.min.js}"></script>
-    <!-- Popper js -->
-    <script th:src="@{/js/popper.min.js}"></script>
-    <!-- Bootstrap js -->
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <!-- All Plugins js -->
-    <script th:src="@{/js/plugins.js}"></script>
-    <!-- Parallax js -->
-    <script th:src="@{/js/dzsparallaxer.js}"></script>
+<!-- ########## All JS ########## -->
+<!-- jQuery js -->
+<script th:src="@{/js/jquery.min.js}"></script>
+<!-- Popper js -->
+<script th:src="@{/js/popper.min.js}"></script>
+<!-- Bootstrap js -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- All Plugins js -->
+<script th:src="@{/js/plugins.js}"></script>
+<!-- Parallax js -->
+<script th:src="@{/js/dzsparallaxer.js}"></script>
 
-    <script th:src="@{/js/jquery.syotimer.min.js}"></script>
+<script th:src="@{/js/jquery.syotimer.min.js}"></script>
 
-    <!-- script js -->
-    <script th:src="@{/js/script.js}"></script>
+<!-- script js -->
+<script th:src="@{/js/script.js}"></script>
 
-    <script th:inline="javascript">
+<script th:inline="javascript">
 
-        // document.getElementById("iconLink").addEventListener("click", function (event) {
-        //     event.preventDefault(); // Prevent navigation if it's a link
-        //
-        //     const icon = this.querySelector("i");
-        //
-        //     // Toggle between the "fa-home" and "fa-check" classes
-        //     if (icon.classList.contains("fa-home")) {
-        //         icon.classList.replace("fa-home", "fa-check");
-        //     } else {
-        //         icon.classList.replace("fa-check", "fa-home");
-        //     }
-        //
-        //     // Optional: Add active state styling
-        //     this.classList.toggle("active");
-        // });
-        function copyToClipboard() {
-            // event.preventDefault();
-            // Get the text field
-            // var textField = document.getElementById("textToCopy").innerText;
-            var textField = '7AfMH1WPwFWQ1N8JE7pjxKWdEhSquxMoKfnTLfEepump';
+    // document.getElementById("iconLink").addEventListener("click", function (event) {
+    //     event.preventDefault(); // Prevent navigation if it's a link
+    //
+    //     const icon = this.querySelector("i");
+    //
+    //     // Toggle between the "fa-home" and "fa-check" classes
+    //     if (icon.classList.contains("fa-home")) {
+    //         icon.classList.replace("fa-home", "fa-check");
+    //     } else {
+    //         icon.classList.replace("fa-check", "fa-home");
+    //     }
+    //
+    //     // Optional: Add active state styling
+    //     this.classList.toggle("active");
+    // });
+    function copyToClipboard() {
+        // event.preventDefault();
+        // Get the text field
+        // var textField = document.getElementById("textToCopy").innerText;
+        var textField = '7AfMH1WPwFWQ1N8JE7pjxKWdEhSquxMoKfnTLfEepump';
 
-            // Copy the text inside the text field
-            navigator.clipboard.writeText(textField).then(() => {
-                // alert('Copied to clipboard!');
-                var paragraph = document.getElementById('copy-btn');
-                paragraph.textContent = 'copied!';
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(textField).then(() => {
+            // alert('Copied to clipboard!');
+            var paragraph = document.getElementById('copy-btn');
+            paragraph.textContent = 'copied!';
 
 
-                setTimeout(() => {
-                    document.getElementById("copy-btn").innerText = "Copy";
-                }, 3000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-            alert("CA copied to clipboard!");
+            setTimeout(() => {
+                document.getElementById("copy-btn").innerText = "Copy";
+            }, 3000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+        alert("CA copied to clipboard!");
     }
 
     /* Initialize variables with Thymeleaf expressions */
@@ -759,7 +759,7 @@
     // let endTime = localStorage.getItem("endTime");
     // if (!endTime) {
     //     endTime = Date.now() + countdownDuration * 1000; // Set end time
-        // localStorage.setItem("endTime", endTime);
+    // localStorage.setItem("endTime", endTime);
     // } else {
     //     endTime = parseInt(endTime);
     // }
@@ -828,35 +828,35 @@
     //     }
     // }
 
-        // Calculate the next 1:00 PM as the end time
-        function getNext1PM() {
-            const now = new Date();
-            let next1PM = new Date();
-            next1PM.setDate(now.getDate() + 1); // Move to the next day
-            next1PM.setHours(3, 0, 0, 0); // Set to 1:00 PM (13:00) exactly
-            return next1PM.getTime();
+    // Calculate the next 1:00 PM as the end time
+    function getNext1PM() {
+        const now = new Date();
+        let next1PM = new Date();
+        next1PM.setDate(now.getDate() + 1); // Move to the next day
+        next1PM.setHours(3, 0, 0, 0); // Set to 1:00 PM (13:00) exactly
+        return next1PM.getTime();
+    }
+
+    // document.getElementById("copyCa").disabled = true;
+    let endTime = getNext1PM();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = Math.max((endTime - now) / 1000, 0);
+
+        if (false) {
+            const days = Math.floor(timeLeft / (24 * 3600));
+            const hours = Math.floor((timeLeft % (24 * 3600)) / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = Math.floor(timeLeft % 60);
+
+            document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+            document.getElementById("countdown").innerText = "What's next?";
+            document.getElementById("trumpButton").disabled = true;
+            document.getElementById("kamalaButton").disabled = true;
         }
-
-        // document.getElementById("copyCa").disabled = true;
-        let endTime = getNext1PM();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = Math.max((endTime - now) / 1000, 0);
-
-            if (false) {
-                const days = Math.floor(timeLeft / (24 * 3600));
-                const hours = Math.floor((timeLeft % (24 * 3600)) / 3600);
-                const minutes = Math.floor((timeLeft % 3600) / 60);
-                const seconds = Math.floor(timeLeft % 60);
-
-                document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                document.getElementById("countdown").innerText = "What's next?";
-                document.getElementById("trumpButton").disabled = true;
-                document.getElementById("kamalaButton").disabled = true;
-            }
-        }
+    }
 
     /* Start the countdown and update every second */
     setInterval(updateCountdown, 1000);
