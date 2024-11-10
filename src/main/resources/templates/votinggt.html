@@ -90,16 +90,16 @@
                     </div>
 
                     <p class="text-center countdown"><span id="countdown" style="color: red;"></span></p>
-                    <p class="b-text text-center total-text font-weight-bold"><span id="totalVotes" th:text="${voteCount.totalVotes}"></span></p>
+                    <p class="b-text text-center total-text font-weight-bold"><span id="totalVotes" >145567700</span></p>
                     <p class="b-text text-center total-votes-text amatic font-weight-bold">TOTAL VOTES</p>
 
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="col-6 my-1">
-                            <p class="trump-votes">TRUMP VOTES: <span id="trumpVotes" th:text="${voteCount.trumpVotes}">987</span></p>
+                            <p class="trump-votes">TRUMP VOTES: <span id="trumpVotes" >74,650...</span></p>
                             <button class="btn trump-btn" onclick="voteFor('Trump')" id="trumpButton" th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">Vote for Trump</button>
                         </div>
                         <div class="col-6 my-1">
-                            <p class="harris-votes">HARRIS VOTES: <span id="kamalaVotes" th:text="${voteCount.kamalaVotes}">654</span></p>
+                            <p class="harris-votes">HARRIS VOTES: <span id="kamalaVotes" >70,916...</span></p>
                             <button class="btn harris-btn" onclick="voteFor('Kamala')" id="kamalaButton"
                                     th:disabled="${voteCount.endTime != null && voteCount.endTime.isBefore(T(java.time.LocalDateTime).now())}">Vote for Harris</button>
                         </div>
